@@ -35,6 +35,8 @@ export class ExamService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} exam`;
+    return this.prisma.exam.delete({
+      where: { id },
+    });
   }
 }
